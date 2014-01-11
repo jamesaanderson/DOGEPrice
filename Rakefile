@@ -12,5 +12,6 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'DOGEPrice'
   app.icon = 'dogecoin.png'
+  app.codesign_for_release = false
   app.info_plist['LSUIElement'] = true
 end
