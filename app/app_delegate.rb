@@ -50,6 +50,8 @@ class AppDelegate
   end
 
   def toBtc
+    @status_item.setTitle('...')
+
     @btc.setState NSOnState
     @usd.setState NSOffState
 
@@ -58,6 +60,8 @@ class AppDelegate
   end
 
   def toUsd
+    @status_item.setTitle('...')
+
     @btc.setState NSOffState
     @usd.setState NSOnState
 
