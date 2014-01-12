@@ -4,7 +4,9 @@ class Dogecoin
       AFMotion::JSON.get('http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=132') do |result|
         if result.success?
           json = result.object
-          block.call(json[:return][:markets][:DOGE][:lasttradeprice])
+          btcValue = json[:return][:markets][:DOGE][:lasttradeprice]
+
+          block.call(btcValue)
         end
       end
     end

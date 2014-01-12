@@ -16,7 +16,8 @@ class AppDelegate
     @status_menu.addItem createMenuItem('Donations Appreciated', 'donations')
     @status_menu.addItem createMenuItem('Quit', 'terminate:')
     
-    self.checkPrice
+    NSTimer.scheduledTimerWithTimeInterval(INTERVAL, target: self, selector: 'checkValue', userInfo: nil, repeats: true)
+    self.checkValue
   end
 
   def createMenuItem(name, action)
@@ -31,11 +32,9 @@ class AppDelegate
     alert.runModal
   end
 
-  def checkPrice
+  def checkValue
     Dogecoin.toBtc do |price|
       @status_item.setTitle("Ð #{price}")
     end
-
-    NSTimer.scheduledTimerWithTimeInterval(INTERVAL, target: self, selector: 'checkPrice', userInfo: nil, repeats: true)
   end
 end
