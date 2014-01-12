@@ -18,7 +18,7 @@ class Dogecoin
             json = result.object
             usdValue = json['return']['buy']['value']
 
-            block.call(usdValue.to_f * btcValue.to_f)
+            block.call((usdValue.to_f * btcValue.to_f).round(8))
           end
         end
       end
