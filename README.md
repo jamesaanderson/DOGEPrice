@@ -1,8 +1,10 @@
 # DOGEPrice
 
-## Screenshot
+## Screenshots
 
-![Screenshot](screenshot.png)
+![](screenshot.png)
+
+![](screenshot2.png)
 
 ## Download
 

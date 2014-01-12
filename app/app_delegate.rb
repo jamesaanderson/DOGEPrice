@@ -13,9 +13,20 @@ class AppDelegate
     @status_item.setHighlightMode(true)
     @status_item.setTitle('...')
 
+    @defaults = NSUserDefaults.standardUserDefaults
+    @defaults['currency'] ||= 'BTC'
+
+    @btc = createMenuItem('DOGE/BTC', 'toBtc')
+    @btc.setState NSOnState if @defaults['currency'] == 'BTC'
+    @status_menu.addItem @btc
+
+    @usd = createMenuItem('DOGE/USD', 'toUsd')
+    @usd.setState NSOnState if @defaults['currency'] == 'USD'
+    @status_menu.addItem @usd
+
     @status_menu.addItem createMenuItem('Donations Appreciated', 'donations')
     @status_menu.addItem createMenuItem('Quit', 'terminate:')
-    
+
     NSTimer.scheduledTimerWithTimeInterval(INTERVAL, target: self, selector: 'checkValue', userInfo: nil, repeats: true)
     self.checkValue
   end
@@ -33,8 +44,24 @@ class AppDelegate
   end
 
   def checkValue
-    Dogecoin.toBtc do |price|
+    Dogecoin.send("to#{@defaults['currency'].capitalize}") do |price|
       @status_item.setTitle("Ð #{price}")
     end
+  end
+
+  def toBtc
+    @btc.setState NSOnState
+    @usd.setState NSOffState
+
+    @defaults['currency'] = 'BTC'
+    self.checkValue
+  end
+
+  def toUsd
+    @btc.setState NSOffState
+    @usd.setState NSOnState
+
+    @defaults['currency'] = 'USD'
+    self.checkValue
   end
 end
