@@ -14,4 +14,4 @@ https://github.com/jamesaanderson/DOGEPrice/releases/download/v.2.1/DOGEPrice-2-
 
 ## Donate
 
-DTWDpERzs3ihWCPesZDBsqovGUS9fNn4tzs3ihWCPesZDBsqovGUS9fNn4tA
+DTWDpERzs3ihWCPesZDBsqovGUS9fNn4tA
