@@ -14,4 +14,5 @@ Motion::Project::App.setup do |app|
   app.icon = 'dogecoin.png'
   app.codesign_for_release = false
   app.info_plist['LSUIElement'] = true
+  app.deployment_target = '10.7'
 end
