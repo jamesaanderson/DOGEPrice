@@ -8,9 +8,9 @@
 
 ## Download
 
-The current version of DOGEPrice (2.1) can be downloaded here:
+The current version of DOGEPrice (2.2) can be downloaded here:
 
-https://github.com/jamesaanderson/DOGEPrice/releases/download/v.2.1/DOGEPrice-2-1.zip
+https://github.com/jamesaanderson/DOGEPrice/releases/download/v.2.2/DOGEPrice-2-2.zip
 
 ## Donate
 
